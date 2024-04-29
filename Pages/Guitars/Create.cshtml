@@ -1,0 +1,72 @@
+﻿@page
+@model CIT_195_Lesson_11_Guitar_Collection.Pages.Guitars.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Guitar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Guitar.Year" class="control-label"></label>
+                <input asp-for="Guitar.Year" class="form-control" />
+                <span asp-validation-for="Guitar.Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guitar.Manufacturer" class="control-label"></label>
+                <input asp-for="Guitar.Manufacturer" class="form-control" />
+                <span asp-validation-for="Guitar.Manufacturer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guitar.NumStrings" class="control-label"></label>
+                <input asp-for="Guitar.NumStrings" class="form-control" />
+                <span asp-validation-for="Guitar.NumStrings" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guitar.BodyStyle" class="control-label"></label>
+                <input asp-for="Guitar.BodyStyle" class="form-control" />
+                <span asp-validation-for="Guitar.BodyStyle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guitar.BodyColor" class="control-label"></label>
+                <input asp-for="Guitar.BodyColor" class="form-control" />
+                <span asp-validation-for="Guitar.BodyColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guitar.Neck" class="control-label"></label>
+                <input asp-for="Guitar.Neck" class="form-control" />
+                <span asp-validation-for="Guitar.Neck" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guitar.NumFrets" class="control-label"></label>
+                <input asp-for="Guitar.NumFrets" class="form-control" />
+                <span asp-validation-for="Guitar.NumFrets" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Guitar.Active" /> @Html.DisplayNameFor(model => model.Guitar.Active)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class = "col-sm-8">
+        <img src = "~/images/guitar-713451_640.jpg" alt ="music study" style ="padding-left: 33px;" />
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
